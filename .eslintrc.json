@@ -1,0 +1,128 @@
+{
+    "env": {
+        "node": true,
+        "browser": true,
+        "es6": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:prettier/recommended",
+        "prettier/@typescript-eslint"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 2018
+    },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "indent": [
+            "error",
+            2
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "double"
+        ],
+        "semi": [
+            "error",
+            "never"
+        ],
+        "no-unused-vars": [
+            "warn",
+            {
+                "argsIgnorePattern": "^_"
+            }
+        ],
+        "camelcase": "off",
+        "@typescript-eslint/camelcase": "off",
+        "padding-line-between-statements": [
+            "error",
+            {
+                "blankLine": "always",
+                "prev": "*",
+                "next": [
+                    "function",
+                    "export",
+                    "return",
+                    "if",
+                    "const",
+                    "let",
+                    "var",
+                    "class",
+                    "throw"
+                ]
+            },
+            {
+                "blankLine": "always",
+                "prev": [
+                    "const",
+                    "let",
+                    "var",
+                    "import",
+                    "function",
+                    "class",
+                    "throw"
+                ],
+                "next": "*"
+            },
+            {
+                "blankLine": "never",
+                "prev": [
+                    "const",
+                    "let",
+                    "var"
+                ],
+                "next": [
+                    "const",
+                    "let",
+                    "var"
+                ]
+            },
+            {
+                "blankLine": "never",
+                "prev": "import",
+                "next": "import"
+            }
+        ],
+        "spaced-comment": [
+            "error",
+            "always",
+            {
+                "exceptions": [
+                    "-",
+                    "+"
+                ]
+            }
+        ],
+        "arrow-parens": [
+            "error",
+            "as-needed"
+        ],
+        "no-console": [
+            "off"
+        ]
+    },
+    "overrides": [
+        {
+            "files": [
+                "*.js"
+            ],
+            "rules": {
+                "@typescript-eslint/no-var-requires": "off",
+                "@typescript-eslint/explicit-function-return-type": ["off"]
+            }
+        }
+    ]
+}
